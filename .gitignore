@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Testing / caching
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# WorkBenchMark task data (downloaded separately)
+data/workbenchmark/
+
+# Course handout (not redistributed)
+final_projects.pdf
+
+# MuJoCo / rendering logs
+MUJOCO_LOG.TXT
+*.log
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
