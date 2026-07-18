@@ -8,7 +8,6 @@
     brick
     gripper
     area
-    grid_loc    ; reserved for future stud-level modeling
   )
 
   (:predicates
@@ -17,7 +16,7 @@
     (clear ?b - brick)
     (graspable ?b - brick)
     (in-pick-area ?b - brick)
-    (in-asm-area ?b - brick)
+    (in-assembly-area ?b - brick)
     (target-pose ?b - brick)
     (holding ?g - gripper ?b - brick)
     (gripper-empty ?g - gripper)
@@ -48,7 +47,7 @@
     :precondition (holding ?g ?b)
     :effect (and
       (gripper-empty ?g)
-      (in-asm-area ?b)
+      (in-assembly-area ?b)
       (on-table ?b)
       (clear ?b)
       (graspable ?b)
@@ -62,13 +61,13 @@
     :precondition (and
       (holding ?g ?top)
       (clear ?bottom)
-      (in-asm-area ?bottom)
+      (in-assembly-area ?bottom)
     )
     :effect (and
       (gripper-empty ?g)
       (stacked-on ?top ?bottom)
       (clear ?top)
-      (in-asm-area ?top)
+      (in-assembly-area ?top)
       (not (holding ?g ?top))
       (not (clear ?bottom))
       (not (on-table ?top))

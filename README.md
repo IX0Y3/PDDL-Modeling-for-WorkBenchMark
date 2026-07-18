@@ -22,19 +22,25 @@ lives in this repo; TAMPanda is an editable local dependency.
 
 ## Scope
 
-| In scope | Out of scope |
-|---|---|
-| Tier 1 (2-brick) and Tier 2 (3–5 brick) vertical stacks | Tier 3–4, real robot |
-| Ground-truth poses from YAML | Perception (GroundingDINO, SAM, …) |
-| MuJoCo simulation via TAMPanda | Modifying TAMPanda itself |
+
+| In scope                                                | Out of scope                       |
+| ------------------------------------------------------- | ---------------------------------- |
+| Tier 1 (2-brick) and Tier 2 (3–5 brick) vertical stacks | Tier 3–4, real robot               |
+| Ground-truth poses from YAML                            | Perception (GroundingDINO, SAM, …) |
+| MuJoCo simulation via TAMPanda                          | Modifying TAMPanda itself          |
+
+
+
 
 ## Phases
 
-| Phase | Goal | Status |
-|---|---|---|
-| **1 — Setup** | Repo, `pyproject.toml`, package skeleton, env smoke tests | done |
-| **2 — Symbolic layer** | `lego_domain.pddl`, YAML parser, problem generator | in progress |
-| **3 — Execution & evaluation** | `DomainBridge` wiring, batch runner, metrics, failure analysis | pending |
+
+| Phase                          | Goal                                                           | Status      |
+| ------------------------------ | -------------------------------------------------------------- | ----------- |
+| **1 — Setup**                  | Repo, `pyproject.toml`, package skeleton, env smoke tests      | done        |
+| **2 — Symbolic layer**         | `lego_domain.pddl`, YAML parser, problem generator             | in progress |
+| **3 — Execution & evaluation** | `DomainBridge` wiring, batch runner, metrics, failure analysis | pending     |
+
 
 **Phase 2 deliverables:** PDDL domain with `pick` / `place` / `stack` actions;
 YAML parser for WorkBenchMark `blocks[]` specs; problem generator from
@@ -50,6 +56,8 @@ systematic evaluation on Tier 1–2 (N = 20 tasks per tier).
 - **Planning time & plan length** — vs. ABD baseline where available
 - **Failure analysis** — which task structures expose model gaps
 
+
+
 ## Setup
 
 Python 3.10+, TAMPanda at `../tampanda`.
@@ -63,10 +71,15 @@ python scripts/check_env.py
 pytest
 ```
 
+
+
 ## Progress
 
-| Phase | Status | Notes |
-|---|---|---|
-| 1 — Setup | done | Project scaffold and environment tests |
-| 2 — Symbolic layer | in progress | `lego_domain.pddl` and domain-parse tests |
-| 3 — Execution & evaluation | pending | — |
+
+| Phase                      | Status      | Notes                                     |
+| -------------------------- | ----------- | ----------------------------------------- |
+| 1 — Setup                  | done        | Project scaffold and environment tests    |
+| 2 — Symbolic layer         | in progress | `lego_domain.pddl` and domain-parse tests |
+| 3 — Execution & evaluation | pending     | —                                         |
+
+

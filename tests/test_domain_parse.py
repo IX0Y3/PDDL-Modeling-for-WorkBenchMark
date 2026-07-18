@@ -13,14 +13,14 @@ DOMAIN_PATH = (
     / "lego_domain.pddl"
 )
 
-EXPECTED_TYPES = {"brick", "gripper", "area", "grid_loc"}
+EXPECTED_TYPES = {"brick", "gripper", "area"}
 EXPECTED_PREDICATES = {
     "stacked-on",
     "on-table",
     "clear",
     "graspable",
     "in-pick-area",
-    "in-asm-area",
+    "in-assembly-area",
     "target-pose",
     "holding",
     "gripper-empty",
