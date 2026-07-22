@@ -73,9 +73,17 @@ What we must deliver, what we aim for if time allows, and what we explicitly lea
 
 
 
+## 📦 Dataset
+
+WorkBenchMark tasks live in the sibling clone [`../dataset`](../dataset)
+([WorkBenchMark/dataset](https://github.com/WorkBenchMark/dataset)):
+
+P1 skips perception, so the YAML→PDDL compiler reads **`ground_truth/`** for both
+initial layout and goal. It is an explicit project simplification.
+
 ## ⚙️ Setup
 
-Python 3.10+, TAMPanda at `../tampanda`.
+Python 3.10+, TAMPanda at `../tampanda`, dataset at `../dataset`.
 
 ```bash
 cd /work/rleap1/aifr/prak4/Project

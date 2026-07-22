@@ -19,9 +19,6 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
-# WorkBenchMark task data (downloaded separately)
-data/workbenchmark/
-
 # Course handout / proposal (not redistributed)
 final_projects.pdf
 proposal.pdf
