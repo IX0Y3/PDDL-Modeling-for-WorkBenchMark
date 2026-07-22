@@ -22,8 +22,9 @@ env/
 # WorkBenchMark task data (downloaded separately)
 data/workbenchmark/
 
-# Course handout (not redistributed)
+# Course handout / proposal (not redistributed)
 final_projects.pdf
+proposal.pdf
 
 # MuJoCo / rendering logs
 MUJOCO_LOG.TXT
