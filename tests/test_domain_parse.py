@@ -13,17 +13,33 @@ DOMAIN_PATH = (
     / "lego_domain.pddl"
 )
 
-EXPECTED_TYPES = {"brick", "gripper", "area"}
+EXPECTED_TYPES = {
+    "brick",
+    "brick-type",
+    "gripper",
+    "stud",
+    "layer",
+    "rot",
+    "area",
+}
 EXPECTED_PREDICATES = {
-    "stacked-on",
-    "on-table",
+    "at-stud",
+    "at-layer",
+    "oriented",
+    "in-area",
     "clear",
-    "graspable",
-    "in-pick-area",
-    "in-assembly-area",
-    "target-pose",
+    "supports",
     "holding",
     "gripper-empty",
+    "occupied",
+    "free",
+    "is-type",
+    "area-pick",
+    "area-assembly",
+    "base-layer",
+    "above",
+    "footprint",
+    "can-attach",
 }
 EXPECTED_ACTIONS = {"pick", "place", "stack"}
 
@@ -52,3 +68,10 @@ def test_domain_predicates(parsed_domain):
 
 def test_domain_actions(parsed_domain):
     assert {a.name for a in parsed_domain.actions} == EXPECTED_ACTIONS
+
+
+def test_stack_mentions_can_attach(parsed_domain):
+    """Half-overlap / rotation validity must be a stack precondition."""
+    stack = next(a for a in parsed_domain.actions if a.name == "stack")
+    pre_names = {str(p) for p in stack.preconditions}
+    assert any("can-attach" in name for name in pre_names)
