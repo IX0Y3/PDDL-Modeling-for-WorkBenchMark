@@ -4,7 +4,8 @@ import importlib
 
 import pytest
 
-
+# Test the core dependencies are importable.
+# Should import tampanda, unified_planning, yaml, and numpy.
 @pytest.mark.parametrize("module", ["tampanda", "unified_planning", "yaml", "numpy"])
 def test_core_dependency_importable(module):
     importlib.import_module(module)

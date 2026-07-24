@@ -33,13 +33,25 @@ def ground_truth_task(tier: int, task_id: int) -> Path:
     return path
 
 
+# Fixture to get the path to a tier 1 task.
+# Should return the path to the task.
 @pytest.fixture
 def tier1_task_001() -> Path:
     # Return the path to the task.
     return ground_truth_task(tier=1, task_id=1)
 
 
+# Fixture to get the path to a tier 2 task.
+# Should return the path to the task.
 @pytest.fixture
 def tier2_task_001() -> Path:
     # Return the path to the task.
     return ground_truth_task(tier=2, task_id=1)
+
+
+# Fixture to get the path to a tier 3 task.
+# Should return the path to the task.
+@pytest.fixture
+def tier3_task_001() -> Path:
+    # Return the path to the task.
+    return ground_truth_task(tier=3, task_id=1)

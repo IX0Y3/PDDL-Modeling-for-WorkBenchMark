@@ -22,15 +22,24 @@ Pipeline: **YAML task spec → PDDL problem → planner → action plan → MuJo
 What we must deliver, what we aim for if time allows, and what we explicitly leave out.
 
 ### ✅ Minimal Requirements
+
 - Tier 1 (2-brick) and Tier 2 (3–5 brick) vertical stacks
 - Ground-truth poses from YAML (no perception)
 - MuJoCo simulation via TAMPanda
+
+
+
 ### 🚀 Goal
+
 - PDDL domain designed for Tier 3 up front (stud-grid poses, rotation,
 `can-attach` / footprint geometry) — no rewrite later
 - Tier 3 (3D layouts, half-overlap, multi-column) if time allows
 - Compare planning time and plan quality against the ABD baseline
+
+
+
 ### 🚫 Not Part of the Project
+
 - Tier 4 complex interlocking assemblies
 - Real-robot experiments
 - Perception stack (GroundingDINO, SAM, FoundationPose, …)
@@ -50,19 +59,24 @@ What we must deliver, what we aim for if time allows, and what we explicitly lea
 
 
 **Phase 2 deliverables:** 
+
 - stud-grid PDDL domain with `pick` / `place` / `stack`
 - Tier‑3-ready predicates YAML parser for WorkBenchMark `blocks[]` specs
 - problem generator from initial + goal YAML.
 
 **Phase 3 deliverables:** 
+
 - map PDDL actions to `PickPlaceExecutor` calls in TAMPanda
 - ground symbolic stud/layer/rot poses to continuous YAML poses
 
 **Phase 4 deliverables:** 
+
 - systematic evaluation on Tier 1–2 (N = 20 tasks per tier)
 - planning/execution success, time, plan length vs. ABD
 - Tier 3 evaluation if implementation of it is completed.
 - Failure analysis.
+
+
 
 ## 📊 Evaluation Metrics
 
@@ -75,10 +89,10 @@ What we must deliver, what we aim for if time allows, and what we explicitly lea
 
 ## 📦 Dataset
 
-WorkBenchMark tasks live in the sibling clone [`../dataset`](../dataset)
+WorkBenchMark tasks live in the sibling clone `[../dataset](../dataset)`
 ([WorkBenchMark/dataset](https://github.com/WorkBenchMark/dataset)):
 
-P1 skips perception, so the YAML→PDDL compiler reads **`ground_truth/`** for both
+P1 skips perception, so the YAML→PDDL compiler reads `ground_truth/` for both
 initial layout and goal. It is an explicit project simplification.
 
 ## ⚙️ Setup

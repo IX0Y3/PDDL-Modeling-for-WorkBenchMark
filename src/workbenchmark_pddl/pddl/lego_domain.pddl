@@ -12,8 +12,8 @@
     ;; Brick types from the catalog, e.g. 2x2 / 4x2
     brick-type 
 
-    ;; Grippers picks up and places bricks
-    gripper
+    ;; Robot end-effector (gripper)
+    endeffector
 
     ;; Studs are the discrete XY cells on the Duplo pitch (16 mm)
     stud
@@ -45,10 +45,10 @@
     (supports ?bottom - brick ?top - brick)
 
     ;; Gripper is holding a brick
-    (holding ?g - gripper ?b - brick)
+    (holding ?g - endeffector ?b - brick)
 
     ;; Gripper is empty
-    (gripper-empty ?g - gripper)
+    (gripper-empty ?g - endeffector)
 
     ;; Only the brick's anchor stud is marked occupied/free
     (occupied ?s - stud ?l - layer)
@@ -79,7 +79,7 @@
   ;; Grasp a clear brick from the pick area (poses come from YAML / perception).
   (:action pick
     :parameters (
-      ?g - gripper
+      ?g - endeffector
       ?b - brick
       ?s - stud
       ?l - layer
@@ -114,7 +114,7 @@
   ;; Put a held brick onto a free assembly base-layer anchor.
   (:action place
     :parameters (
-      ?g - gripper
+      ?g - endeffector
       ?b - brick
       ?s - stud
       ?l - layer
@@ -145,7 +145,7 @@
   ;; Stack onto a clear support when can-attach holds for the two anchors.
   (:action stack
     :parameters (
-      ?g - gripper
+      ?g - endeffector
       ?top - brick
       ?bottom - brick
       ?top-s - stud

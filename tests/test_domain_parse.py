@@ -16,7 +16,7 @@ DOMAIN_PATH = (
 EXPECTED_TYPES = {
     "brick",
     "brick-type",
-    "gripper",
+    "endeffector",
     "stud",
     "layer",
     "rot",

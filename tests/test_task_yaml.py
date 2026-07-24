@@ -7,6 +7,7 @@ import pytest
 from workbenchmark_pddl.task import BrickSpec, load_task, task_from_mapping
 
 # Test loading a tier 1 task from the dataset.
+# Should load the task from the dataset and validate the task.
 def test_load_tier1_task_from_dataset(tier1_task_001: Path):
     # Load the task.
     task = load_task(tier1_task_001)

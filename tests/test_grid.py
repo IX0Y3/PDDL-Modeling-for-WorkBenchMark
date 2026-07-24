@@ -16,6 +16,7 @@ from workbenchmark_pddl.task import load_task
 
 
 # Test the quantize_yaw function
+# Should fold 0, 90, 180, 270, and -90 to 0 or 90.
 def test_quantize_yaw_folds_to_0_or_90():
 
     # 0 Maps to 0
@@ -31,6 +32,7 @@ def test_quantize_yaw_folds_to_0_or_90():
 
 
 # Test the quantize_pose function
+# Should quantize a basic stack to the correct layer and rotation.
 def test_quantize_pose_basic_stack():
 
     # Quantize the base and top bricks (continuous -> discrete)
@@ -51,6 +53,7 @@ def test_quantize_pose_basic_stack():
     assert top.layer == base.layer + 1
 
 # Tets if tier 1 task goal layers are correct
+# Should quantize the base and top bricks to the correct layer and rotation.
 def test_tier1_goal_layers(tier1_task_001: Path):
 
     # Load the task
@@ -69,6 +72,7 @@ def test_tier1_goal_layers(tier1_task_001: Path):
     assert top.rot == 0
 
 # Test if tier 2 task goal includes yaw 90
+# Should quantize the goal blocks to include yaw 90.
 def test_tier2_goal_includes_yaw_90(tier2_task_001: Path):
 
     # Load the task
@@ -82,6 +86,7 @@ def test_tier2_goal_includes_yaw_90(tier2_task_001: Path):
 
 
 # Test if pick area is flat with local z origin
+# Should quantize the initial brick to the correct layer.
 def test_pick_area_flat_with_local_z_origin(tier1_task_001: Path):
 
     # Initial bricks sit on the table (z≈0.0495); local origin → layer 0.
